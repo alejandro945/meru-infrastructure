@@ -29,8 +29,8 @@ variable "instance_name" {
   type        = string
 }
 
-variable "tags" {
-  description = "Etiquetas adicionales para la instancia"
-  type        = map(string)
-  default     = {}
+variable "user_data" {
+  description = "User data para la instancia EC2"
+  type        = string
 }
+
