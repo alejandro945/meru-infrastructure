@@ -76,7 +76,7 @@ module "security_group" {
   for_each = var.instances
   source               = "./modules/security/security-groups"
   security_group_name  = "${each.value.instance_name}-sg"
-  vpc_id               = module.nets.vpc_id
+  vpc_id               = module.networks.vpc_id
   allowed_ssh_cidrs    = var.allowed_ssh_cidrs
   allowed_http_cidrs   = var.allowed_http_cidrs
   depends_on = [ module.networks ]
@@ -95,7 +95,7 @@ module "ec2_instance" {
   depends_on = [ module.security_group ]
 }
 
-resource "tls_private_key" "rsa-4096-example" {
+resource "tls_private_key" "rsa" {
   algorithm = "RSA"
   rsa_bits  = 4096
 }

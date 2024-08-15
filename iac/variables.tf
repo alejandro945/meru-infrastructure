@@ -46,47 +46,11 @@ variable "ami_id" {
   default = "ami-04a81a99f5ec58529"
 }
 
-variable "instance_type" {
-  description = "Instance type"
-  type        = string
-  default     = "t2.micro"
-}
-
-variable "subnet_id" {
-  description = "ID of the subnet"
-  type        = string
-}
-
-variable "security_group_name" {
-  description = "Security group name"
-  type        = string
-  default     = "ssh-http-sg"
-}
-
-variable "allowed_ssh_cidrs" {
-  description = "CIDR blocks allowed for SSH"
-  type        = list(string)
-  default     = ["0.0.0.0/0"]
-}
-
-variable "allowed_http_cidrs" {
-  description = "CIDR blocks allowed for HTTP"
-  type        = list(string)
-  default     = ["0.0.0.0/0"]
-}
-
-variable "tags" {
-  description = "Additional tags for the compute instance"
-  type        = map(string)
-  default     = {}
-}
-
 variable "instances" {
   description = "List names for the EC2 instances"
   type        = map(object({
     name = string
     instance_type = string
-    security_group_name = string
   }))
   default     = {
     "bastion" = {
