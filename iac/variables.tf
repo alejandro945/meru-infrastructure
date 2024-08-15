@@ -52,11 +52,6 @@ variable "instance_type" {
   default     = "t2.micro"
 }
 
-variable "key_name" {
-  description = "Name of the SSH key pair"
-  type        = string
-}
-
 variable "subnet_id" {
   description = "ID of the subnet"
   type        = string
@@ -94,7 +89,7 @@ variable "instances" {
     security_group_name = string
   }))
   default     = {
-    "web" = {
+    "bastion" = {
       name = "bastion"
       instance_type = "t2.micro"
     }

@@ -1,4 +1,3 @@
-key_name = "meru"
 cird_block_vpc = "10.0.0.0/16"
 az_list = [ "us-east-1a", "us-east-1b" ]
 public_subnet_cidrs = ["10.0.0.1/24", "10.0.0.2/24"]
