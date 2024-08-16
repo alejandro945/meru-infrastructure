@@ -38,7 +38,8 @@ Networking and Terraform.
     aws eks --region us-east-1 update-kubeconfig --name meru-cluster
     # Ensure your user is attach in the access entries of the cluster with admin cluster policy
     kubectl get nodes -- Test the connection
-    kubectl create namespace meru && kubectl apply -f nginx.yaml -n meru
+    cd orchestation
+    kubectl create namespace meru && helm upgrade --install meru-app ./compute -n meru && kubectl apply -f nginx.yaml -n meru
      ```
 
 1. Infrastructure Approvisioning using Terraform in AWS

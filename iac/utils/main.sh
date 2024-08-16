@@ -1,7 +1,7 @@
 #!/bin/bash
 # Verifica si se han pasado argumentos
 
-ports= (22 80)
+ports=(22 80)
 
 # Limpiar reglas existentes
 sudo iptables -F
