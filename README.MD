@@ -30,6 +30,7 @@ Networking and Terraform.
 4. Run the following commands to create the infrastructure
     ```sh
     aws configure
+    cd iac
     terraform init
     terraform apply -auto-approve
      ```
