@@ -1,31 +1,31 @@
 variable "ami_id" {
-  description = "ID de la AMI para la instancia EC2"
+  description = "AMI id for the EC2 instance"
   type        = string
 }
 
 variable "instance_type" {
-  description = "Tipo de instancia EC2"
+  description = "EC2 instance type"
   type        = string
   default     = "t2.micro"
 }
 
 variable "key_name" {
-  description = "Nombre del par de claves SSH"
+  description = "SSH key pair name"
   type        = string
 }
 
 variable "subnet_id" {
-  description = "ID de la subred donde se desplegará la instancia"
+  description = "Subnet id where the instance will be deployed"
   type        = string
 }
 
 variable "security_group_id" {
-  description = "ID del grupo de seguridad asociado a la instancia"
+  description = "Group ID of the security group"
   type        = string
 }
 
 variable "instance_name" {
-  description = "Nombre de la instancia EC2"
+  description = "Name of the EC2 instance"
   type        = string
 }
 

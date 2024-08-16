@@ -1,3 +1,7 @@
+################################
+#            NETWORK           #
+################################
+
 module "networks" {
   source = "./modules/network"
   project              = var.project_name
@@ -8,7 +12,7 @@ module "networks" {
 }
 
 ################################
-#  ROLES FOR SERVICE ACCOUNTS  #
+#            CLUSTER           #
 ################################
 
 module "vpc_cni_irsa" {
@@ -26,7 +30,6 @@ module "vpc_cni_irsa" {
     }
   }
 }
-
 
 module "eks" {
   source  = "terraform-aws-modules/eks/aws"
@@ -76,6 +79,10 @@ module "eks" {
     }
   }
 }
+
+################################
+#         EC2 BASTION          #
+################################
 
 module "security_group" {
   for_each = var.instances
