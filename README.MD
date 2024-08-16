@@ -57,6 +57,7 @@ Networking and Terraform.
     ```sh
     terraform destroy -auto-approve
     ```
+    ![destroy](./assets/destroy.png)
 
 ### Tasks
 
