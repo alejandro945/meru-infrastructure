@@ -4,11 +4,48 @@ Evaluate skills in systems administration, automation, and infrastructure manage
 infrastructure using core DevOps technologies such as AWS, Docker, Kubernetes, Linux,
 Networking and Terraform.
 
+### Prerequisites
+
+- AWS Account ans AWS CLI
+- Terraform
+- Docker
+- Kubernetes
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/alejandro945/meru-infrastructure.git
+    ```
+2. Change directory
+   ```sh
+   cd meru-infrastructure
+    ```
+3. Create a user for Terraform in AWS and attach and admin policies (training purposes only)
+    ```sh
+    aws iam create-user --user-name cli_terraform
+    aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --user-name cli_terraform
+    aws iam create-access-key --user-name cli_terraform
+    ```
+4. Run the following commands to create the infrastructure
+    ```sh
+    aws configure
+    terraform init
+    terraform apply -auto-approve
+     ```
+5. To deploy the application in eks cluster
+    ```sh
+    aws eks --region us-east-1 update-kubeconfig --name meru-cluster
+    # Ensure your user is attach in the access entries of the cluster with admin cluster policy
+    kubectl get nodes -- Test the connection
+    kubectl create namespace meru && kubectl apply -f nginx.yaml -n meru
+     ```
 
 1. Infrastructure Approvisioning using Terraform in AWS
 
-- Using Terraform, create a basic environment on AWS that includes:
-    o An EC2 instance running Linux.
+- Using Terraform, create an environment on AWS that includes:
+    o An EC2 instance running Linux ubuntu.
+
     o A Security Group that allows SSH (port 22) and HTTP (port 80) access.
     (port 80).
     o A public IP address assigned to the EC2 instance.
@@ -36,7 +73,7 @@ to deploy multiple instances.
 
     o Configure firewall rules (using iptables or ufw) to ensure that only traffic on ports 22 and 80 is allowed.
     traffic is only allowed on ports 22 and 80.
+
     o Configure SSH to allow access with SSH keys only and disable password authentication.
-    password authentication.
+
     o Install and configure Nginx as a reverse proxy that redirects HTTP traffic to port 80 of the web application inside the Docker container.
-    the web application inside the Docker container.

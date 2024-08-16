@@ -69,5 +69,5 @@ variable "key_pair_name" {
 variable "file_name" {
   description = "Name of the key pair"
   type        = string
-  default = "tf_key"
+  default = "tf_key.pem"
 }
