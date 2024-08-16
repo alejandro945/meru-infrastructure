@@ -4,7 +4,7 @@ Evaluate skills in systems administration, automation, and infrastructure manage
 infrastructure using core DevOps technologies such as AWS, Docker, Kubernetes, Linux,
 Networking and Terraform.
 
-![Infra](./assets/infrastrucutre.png)
+![Infra](./assets/infrastructure.png)
 
 ### Prerequisites
 
