@@ -1,4 +1,4 @@
-## Meru Infrastructure
+## Meru Infrastructure 🚀
 
 Evaluate skills in systems administration, automation, and infrastructure management using core DevOps
 infrastructure using core DevOps technologies such as AWS, Docker, Kubernetes, Linux,
@@ -13,7 +13,7 @@ Networking and Terraform.
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repository
    ```sh
    git clone https://github.com/alejandro945/meru-infrastructure.git
     ```
@@ -21,7 +21,7 @@ Networking and Terraform.
    ```sh
    cd meru-infrastructure
     ```
-3. Create a user for Terraform in AWS and attach and admin policies (training purposes only)
+3. Create a user for Terraform in AWS and attach admin policies (training purposes only)
     ```sh
     aws iam create-user --user-name cli_terraform
     aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AdministratorAccess --user-name cli_terraform
@@ -41,6 +41,15 @@ Networking and Terraform.
     cd orchestation
     kubectl create namespace meru && helm upgrade --install meru-app ./compute -n meru && kubectl apply -f nginx.yaml -n meru
      ```
+6. To access the application
+    ```sh
+    kubectl get svc -n meru
+    # Copy the external ip and paste in the browser
+    ```
+7. To destroy the infrastructure
+    ```sh
+    terraform destroy -auto-approve
+    ```
 
 1. Infrastructure Approvisioning using Terraform in AWS
 
